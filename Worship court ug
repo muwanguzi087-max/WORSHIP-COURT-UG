@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WORSHIP COURT UGANDA | WORSHIP MINISTRY </title>
+
+  <link rel="preconnect" href="https://fonts.googlepis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --navy: #071d49;
+      --blue: #123d8a;
+      --gold: #d7aa39;
+      --light-gold: #f3d987;
+      --white: #ffffff;
+      --soft: #f4f7ff;
+      --dark: #10131a;
+      --gray: #667085;
+    }
+
+    body {
+      font-family: "Montserrat", sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /* Navigation */
+    nav {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      z-index: 10;
+      padding: 22px 8%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      color: var(--white);
+      font-size: 25px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .logo span {
+      color: var(--gold);
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+      gap: 28px;
+    }
+
+    .nav-links a {
+      color: var(--white);
+      font-size: 14px;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--gold);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      padding: 150px 8% 80px;
+      display: flex;
+      align-items: center;
+      background:
+        linear-gradient(90deg, rgba(4, 13, 40, 0.94), rgba(4, 13, 40, 0.55)),
+        url("https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=1800&q=85");
+      background-size: cover;
+      background-position: center;
+      color: var(--white);
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .hero p.small-title {
+      color: var(--light-gold);
+      letter-spacing: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(55px, 7vw, 100px);
+      line-height: 0.9;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+    }
+
+    .hero-text {
+      font-size: 17px;
+      max-width: 590px;
+      margin-bottom: 32px;
+      color: #e7e9f2;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 25px;
+      display: inline-block;
+      border-radius: 3px;
+      font-size: 13px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--navy);
+    }
+
+    .btn-gold:hover {
+      background: var(--light-gold);
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--white);
+      color: var(--white);
+    }
+
+    .btn-outline:hover {
+      background: var(--white);
+      color: var(--navy);
+    }
+
+    /* General Section */
+    section {
+      padding: 95px 8%;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 55px;
+    }
+
+    .section-title p {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .section-title h2 {
+      font-size: 50px;
+      color: var(--navy);
+      line-height: 1;
+    }
+
+    /* About */
+    .about {
+      background: var(--soft);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 430px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .about-content h2 {
+      font-size: 52px;
+      line-height: 0.95;
+      color: var(--navy);
+      margin-bottom: 22px;
+    }
+
+    .about-content h2 span {
+      color: var(--gold);
+    }
+
+    .about-content p {
+      color: var(--gray);
+      margin-bottom: 18px;
+      font-size: 15px;
+    }
+
+    /* Music */
+    .music-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .music-card {
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--navy);
+      color: var(--white);
+      transition: 0.3s;
+    }
+
+    .music-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px rgba(7, 29, 73, 0.2);
+    }
+
+    .music-card img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+    }
+
+    .music-card-content {
+      padding: 22px;
+    }
+
+    .music-card h3 {
+      font-size: 30px;
+      margin-bottom: 7px;
+    }
+
+    .music-card p {
+      color: #c7d2eb;
+      font-size: 13px;
+      margin-bottom: 18px;
+    }
+
+    .listen-btn {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    /* Video */
+    .video-section {
+      background:
+        linear-gradient(rgba(4, 13, 40, 0.9), rgba(4, 13, 40, 0.9)),
+        url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1800&q=80");
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      color: var(--white);
+    }
+
+    .video-section h2 {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .video-section p {
+      max-width: 650px;
+      margin: 0 auto 30px;
+      color: #d9deed;
+      font-size: 15px;
+    }
+
+    .play-button {
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      border-radius: 50%;
+      background: var(--gold);
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .play-button:hover {
+      transform: scale(1.1);
+      background: var(--white);
+    }
+
+    /* Events */
+    .events {
+      background: var(--soft);
+    }
+
+    .event-box {
+      display: grid;
+      grid-template-columns: 150px 1fr auto;
+      align-items: center;
+      gap: 25px;
+      background: var(--white);
+      padding: 24px 30px;
+      margin-bottom: 18px;
+      border-left: 5px solid var(--gold);
+      border-radius: 4px;
+    }
+
+    .event-date {
+      text-align: center;
+      color: var(--navy);
+    }
+
+    .event-date h3 {
+      font-size: 45px;
+      line-height: 0.8;
+    }
+
+    .event-date p {
+      color: var(--gold);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 1px;
+    }
+
+    .event-info h3 {
+      font-size: 30px;
+      color: var(--navy);
+    }
+
+    .event-info p {
+      color: var(--gray);
+      font-size: 13px;
+    }
+
+    /* Contact */
+    .contact {
+      background: var(--navy);
+      color: var(--white);
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 55px;
+      margin-bottom: 18px;
+    }
+
+    .contact h2 span {
+      color: var(--gold);
+    }
+
+    .contact p {
+      color: #c7d2eb;
+      max-width: 600px;
+      margin: 0 auto 28px;
+      font-size: 14px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .socials a {
+      border: 1px solid #6c7ba0;
+      color: var(--white);
+      padding: 11px 16px;
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 3px;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      background: var(--gold);
+      border-color: var(--gold);
+      color: var(--navy);
+    }
+
+    footer {
+      background: #04102a;
+      color: #9da8c3;
+      text-align: center;
+      padding: 22px;
+      font-size: 12px;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .about-grid,
+      .music-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-box {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 65px;
+      }
+
+      .section-title h2,
+      .about-content h2,
+      .contact h2 {
+        font-size: 42px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">WORSHIP <span>COURT</span> UG</div>
+
+    <ul class="nav-links">
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#about">ABOUT</a></li>
+      <li><a href="#music">MUSIC</a></li>
+      <li><a href="#events">EVENTS</a></li>
+      <li><a href="#contact">CONTACT</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="small-title">WORSHIP MINISTRY • UGANDA</p>
+
+      <h1>
+        Raising <span> True Worshippers.</span><br>
+        Revealing Christ.
+      </h1>
+
+      <p class="hero-text">
+        Worship Court Uganda is a worship music ministry committed to creating
+        an atmosphere where people encounter Jesus through sound, songs,
+        prayer, and authentic worship. its also comitted to raising worshippers from different life backgrounds from uganda to the whole world.
+      </p>
+
+      <div class="buttons">
+        <a href="#music" class="btn btn-gold">LISTEN TO OUR MUSIC</a>
+        <a href="#events" class="btn btn-outline">UPCOMING EVENTS</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1507838153414-b4b713384a76?auto=format&fit=crop&w=900&q=80" alt="Worship team">
+      </div>
+
+      <div class="about-content">
+        <h2>More Than <span>Music.</span></h2>
+
+        <p>
+          Worship Court Uganda is a community of worshippers, musicians,
+           creatives psamists, and believers who desire to see God glorified
+          through worship.
+        </p>
+
+        <p>
+          Our sound carries prayer, scripture, intimacy with God, and a heart
+          for revival in Uganda, Africa, and the nations.
+        </p>
+
+        <a href="#contact" class="btn btn-gold">CONNECT WITH US</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="music">
+    <div class="section-title">
+      <p>OUR SOUND</p>
+      <h2>Worship Music</h2>
+    </div>
+
+    <div class="music-grid">
+
+      <div class="music-card">
+        <img src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80" alt="Live worship">
+        <div class="music-card-content">
+          <h3>Live Worship Sessions</h3>
+          <p>Powerful moments of spontaneous worship, prayer, and songs of adoration.</p>
+          <a href="#" class="listen-btn">LISTEN NOW →</a>
+        </div>
+      </div>
+
+      <div class="music-card">
+        <img src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?auto=format&fit=crop&w=800&q=80" alt="Worship singer">
+        <div class="music-card-content">
+          <h3>Original Songs</h3>
+          <p>Original worship songs written to exalt Jesus and strengthen believers.</p>
+          <a href="#" class="listen-btn">LISTEN NOW →</a>
+        </div>
+      </div>
+
+      <div class="music-card">
+        <img src="https://images.unsplash.com/photo-1524650359799-842906ca1c06?auto=format&fit=crop&w=800&q=80" alt="Worship concert">
+        <div class="music-card-content">
+          <h3>Worship Experiences</h3>
+          <p>Gatherings where worshippers come together to seek God in unity.</p>
+          <a href="#" class="listen-btn">WATCH NOW →</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="video-section">
+    <h2>Experience Worship</h2>
+    <p>
+      Watch live worship moments, music videos, rehearsals, and powerful
+      encounters from Worship Court Uganda.
+    </p>
+
+    <a href="https://www.youtube.com/" target="_blank" class="play-button">▶</a>
+  </section>
+
+  <section class="events" id="events">
+    <div class="section-title">
+      <p>JOIN US</p>
+      <h2>Upcoming Worship Experiences</h2>
+    </div>
+
+    <div class="event-box">
+      <div class="event-date">
+        <h3>09</h3>
+        <p>JUNE 2026</p>
+      </div>
+
+      <div class="event-info">
+        <h3>Worship Court Experience</h3>
+        <p>9:00 AM – 4:00 PM • Kampala, Uganda</p>
+      </div>
+
+      <a href="#contact" class="btn btn-gold">JOIN US</a>
+    </div>
+
+    <div class="event-box">
+      <div class="event-date">
+        <h3>28</h3>
+        <p>JUNE 2026</p>
+      </div>
+
+      <div class="event-info">
+        <h3>Night of Worship & Prayer</h3>
+        <p>6:00 PM – 10:00 PM • Worship Court Uganda</p>
+      </div>
+
+      <a href="#contact" class="btn btn-gold">JOIN US</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Let Us <span>Worship Together.</span></h2>
+
+    <p>
+      Invite Worship Court Uganda for worship events, concerts, church services,
+      worship nights, collaborations, and ministry gatherings.
+    </p>
+
+    <div class="socials">
+      <a href="https://www.youtube.com/" target="_blank">@worshipcourtexpug- YOUTUBE</a>
+      <a href="https://www.instagram.com/" target="_blank">worship Court Uganda - INSTAGRAM</a>
+      <a href="https://www.facebook.com/" target="_blank">worship Court Uganda - FACEBOOK</a>
+      <a href="https://wa.me/256790184564" target="_blank">worship Court Uganda - WHATSAPP</a>
+      <a href="mailto:worshipcourtuganda@gmail.com">worship Court Uganda - EMAIL US</a>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Worship Court Uganda. All Rights Reserved.
+  </footer>
+
+</body>
+</html>
